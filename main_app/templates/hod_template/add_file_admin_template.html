@@ -1,0 +1,41 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+{% block content %}
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card" style="background-color: #FBFBFB">
+                        <div class="card-header">
+                            <h4 style="text-align: center">آپلود فایل</h4>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body" style="width: 70%;margin: auto">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead class="thead-dark">
+
+
+                                <form method="POST" class="post-form" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                        <div class="form-group">
+                                            {{ field.errors }}
+                                            {{ field.label_tag }}
+                                            {{ field }}
+                                        </div>
+                                    {% endfor %}
+                                    <button type="submit" class="save btn btn-default"
+                                            style="background-color: green;color: white">Save
+                                    </button>
+                                </form>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

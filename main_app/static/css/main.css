@@ -1,0 +1,4 @@
+@font-face {
+  font-family: 'persian_font';
+  src: local('Persian_font'), url('../static/fonts/persian_font.ttf') format("truetype");
+}

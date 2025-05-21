@@ -1,0 +1,239 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>پورتال | وارد شوید</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{% static 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' %}">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- Google Recaptcha     -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        .background_color {
+            background: linear-gradient(62deg, rgba(160, 206, 252, 1) 30%, rgba(236, 219, 254, 1) 70%);
+        }
+
+        .a-href {
+            color: grey;
+            margin-top: 500px;
+        }
+
+
+        .login-logo {
+            animation: effect 2s linear infinite;
+        }
+
+        @keyframes effect {
+            0% {
+                background: linear-gradient(#008000, #00FF00);
+                -webkit-background-clip: text;
+            }
+
+            100% {
+                background: linear-gradient(#3CE7D7, #000FFF);
+                -webkit-background-clip: text;
+            }
+        }
+
+        .div_class {
+            display: inline-block;
+            margin-bottom: 25px;
+            margin-left: 40px;
+        }
+
+        .image_logo {
+            width: 125px;
+            height: 125px;
+            display: inline-block;
+            margin-top: 70px;
+        }
+
+        .h6_class {
+            width: 125px;
+            margin: auto;
+            margin-top: 10px;
+            text-align: center;
+
+        }
+
+        .login_text {
+            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+        }
+
+        .a_tag_reset_password {
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        .a_tag_reset_password a {
+            color: grey;
+        }
+
+        .a_tag_reset_password a:hover {
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body class="hold-transition login-page background_color">
+
+<div class="login-box">
+
+    <div class="login-logo login_text">
+        <a href=""><b>درگاه سازمانی هلدینگ توسعه صنایع شهد آذربایجان</b></a>
+
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <!-- <p class="login-box-msg">Sign in to start your session</p> -->
+            {% if messages %}
+                <div class="col-12">
+                    {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                            <div class="alert alert-danger text-center ">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form action="doLogin/" method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                    <input required type="email" name='email' class="form-control" placeholder="Email">
+
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                    <input required type="password" name='password' class="form-control" placeholder="Password">
+
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-success btn-block" style="width: 320px">ورود</button>
+                    </div>
+
+                </div>
+                <!--
+                <div class="row" style="margin-right: 0px">
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                            <label for="remember">
+                                مرا به خاطر بسپار
+                            </label>
+                            <input type="checkbox" id="remember">
+
+                        </div>
+                    </div>
+                </div>
+                -->
+            </form>
+
+            <div class="a_tag_reset_password">
+                <a href="{% url 'reset_password' %}">فراموشی رمز عبور</a>
+            </div>
+        </div>
+    </div>
+</div>
+<marquee direction=right scrollamount=9>
+
+    <div class="div_class">
+        <img class="image_logo" src="../../static/media/tootia.png" alt="">
+        <h6 class="h6_class">توتیا</h6>
+    </div>
+
+    <div class="div_class">
+        <img class="image_logo" src="../../static/media/taraghi.png" alt="">
+        <h6 class="h6_class">ترقی</h6>
+    </div>
+
+    <div class="div_class">
+        <img class="image_logo" src="../../static/media/golfam.png" alt="">
+        <h6 class="h6_class">گلفام</h6>
+    </div>
+
+    <div class="div_class">
+        <img class="image_logo" src="../../static/media/behzerae.png" alt="">
+        <h6 class="h6_class">بهزراعی</h6>
+    </div>
+
+    <div class="div_class">
+        <img class="image_logo" src="../../static/media/golfam_daru.png" alt="">
+        <h6 class="h6_class">گلفام دارو</h6>
+    </div>
+
+    <div class="div_class">
+        <img class="image_logo" src="../../static/media/shafazhen.png" alt="">
+        <h6 class="h6_class">شفاژن</h6>
+    </div>
+
+    <div class="div_class">
+        <img class="image_logo" src="../../static/media/choghondar_ghand_orumieye.png" alt="">
+        <h6 class="h6_class">چغندر قند ارومیه</h6>
+    </div>
+
+    <div class="div_class">
+        <img class="image_logo" src="../../static/media/piranshahr.png" alt="">
+        <h6 class="h6_class">پیرانشهر</h6>
+    </div>
+
+    <div class="div_class">
+        <img class="image_logo" src="../../static/media/ghandkhoy.png" alt="">
+        <h6 class="h6_class">قند خوی</h6>
+    </div>
+
+    <div class="div_class">
+        <img class="image_logo " src="../../static/media/ghand.png" alt="">
+        <h6 class="h6_class">قند ارومیه</h6>
+    </div>
+
+    <div class="div_class">
+        <img class="image_logo" src="../../static/media/shahd_logo.png" alt="">
+        <h6 class="h6_class">هلدینگ شهد آذربایجان</h6>
+    </div>
+
+
+</marquee>
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

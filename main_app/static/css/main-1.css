@@ -1,0 +1,160 @@
+
+.container-1{
+    margin-top: 30px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    outline: 4px solid#2A6076;
+    outline-offset: 20px;
+    width: 100%;
+    display: flex;
+    .intro{
+        
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-flow: column wrap;
+        border-radius: 10px;
+        .logo{
+            width:100%;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+            img{
+                object-fit: cover;
+                width: 150px ;
+                height: 150px;
+              
+            }
+            
+        }
+        .head{
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            hr{
+                box-shadow: 0px 0px 5px;
+                width: 53%;
+                position: absolute;
+                left:16%;
+            }
+            .animate__animated.animate__fadeInDown{
+                --animate-duration: 2s;
+            
+              }
+              h1{
+                padding-top: 20px;
+                word-spacing: 3px;
+              }
+        
+            }
+           
+        }
+        .default-content{
+            width: 100%;
+            margin-top: 20px;
+                font-size: 20px;
+                line-height: 40px;
+                text-align: justify;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                
+            }
+        }
+    
+    .right-side-news{
+        
+        width: 20%;
+        border-radius: 10px;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        color: white;
+        gap:15px;
+        background-color:#2A6076;
+        .companies{
+            margin-top:30px;
+            width: 100%;
+            height: 100px;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            h3{
+                font-weight: normal;
+                font-size: 20px;
+                width: 90%;
+            }
+           
+        }
+        .news{
+            &:hover{
+                background-color:#518297 ;
+            }
+            width: 100%;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            a{
+               
+                text-align: center;
+                transition: 500ms;
+                text-decoration: none;
+               color: white;
+
+                
+           
+                
+
+
+            }
+        }
+
+
+}
+.animate__animated.animate__fadeIn {
+    --animate-duration: 2s;
+   
+  }
+  .animate__animated.animate__fadeInDown{
+    --animate-duration: 3s;
+
+  }
+.mf{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+text-align: center;
+width: 100%;
+margin-top: 30px;
+position: relative;
+img{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -25%;
+    left: 67%;
+}
+.shafazhen-logo{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: -5%;
+    left: 69%;
+}
+}
+.container{
+    margin-top: 50px;
+}
+.video{
+   /* border-radius: 20px; */
+}
